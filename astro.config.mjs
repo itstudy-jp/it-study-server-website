@@ -1,6 +1,5 @@
 import { defineConfig } from 'astro/config'
 
 export default defineConfig({
-  site: 'https://kettle12110.github.io',
-  base: '/astro-test',
+  site: 'https://itstudy-jp.github.io/it-study-server-website',
 })
