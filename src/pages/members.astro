@@ -1,0 +1,59 @@
+---
+import Card from '../components/MemberCards.astro';
+---
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>メンバー</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+      body {
+        font-family: 'Inter', sans-serif;
+        line-height: 1.5;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        margin-top: 5%; /* ここを追加 */
+        background-color: white;
+        text-align: center; /* テキストを中央揃え */
+      }
+      .pageheader {
+        text-align: center;
+        align-items: center;
+        margin-bottom: 100px; /* 変更 */
+      }
+      .about-main {
+        font-size: 56px;
+        margin: 0 auto; /* 左右の余白を均等に */
+        margin-bottom: 0;
+      }
+      .about-sub {
+        font-size: 26px;
+        margin: 0 auto; /* 左右の余白を均等に */
+      }
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(2, 490px); /* カードの幅に合わせて列を自動調整 */
+        gap: 50px; /* カード間のスペースを設定 */
+
+      }
+    </style>
+  </head>
+  <body>
+    <div class="pageheader">
+      <p class="about-main">私たちについて</p>
+      <p class="about-sub">Discordサーバーで主に活動している人たち</p>
+    </div>
+    <div class="grid-container">
+      <Card githubUrl="https://github.com/username1" imgUrl="/src/assets/member-aki.png" name="Aki" title="鯖主、陽キャ" description="明るいお姉さん<br>タイにある古のインターネットに住んでいた<br>インフラ（物理）と英語に強い" />
+      <Card githubUrl="https://github.com/username1" imgUrl="/src/assets/member-tasuku.png" name="髙木 祐来" title="イイやつ" description="プログラミングとボカロが好きな、合理的な陰キャ<br>日ごろから技術を触っていて、知識がすごい大学生<br>MBTI: ENTJ-A（指揮官）" />
+      <Card githubUrl="https://github.com/username1" imgUrl="/src/assets/member-fu.png" name="fu" title="音楽人" description="吹奏楽とITの二刀流してる大学生<br>このWebサイトのメインページ作ってる人<br>なんでもとりあえずやってみるタイプ" />
+      <Card githubUrl="https://github.com/username1" imgUrl="/src/assets/member-kettle.png" name="けとる" title="ストゼロ" description="いつも酔ってる酒カス<br>文系からSEに就職した<br>文系コンプレックスを解消するべく勉強中" />
+    </div>
+  </body>
+</html>

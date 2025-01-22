@@ -1,0 +1,101 @@
+---
+export interface Props {
+  githubUrl: string;
+  imgUrl: string;
+  name: string;
+  title: string;
+  description: string;
+}
+
+const { githubUrl, imgUrl, name, title, description } = Astro.props as Props;
+---
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+    body {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400; /* Interをregularに設定 */
+      line-height: 1.5;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: white;
+      text-align: center; /* テキストを中央揃え */
+    }
+    .card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #ccc;
+      padding: 16px;
+      border-radius: 8px;
+      background: #EEEEEE;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 180px;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+    .info {
+      display: flex;
+      flex-direction: column; 
+      align-items: left;
+      margin-top: 6px;
+      margin-left: 90px;
+    }
+    .name {
+      text-align: left; /* 左揃えに変更 */
+      font-size: 24px;
+    }
+    .job {
+      text-align: left; /* 左揃えに変更 */
+      font-size: 15px;
+      color: #4A4A4A; /* 文字の色を追加 */
+    }
+    .description {
+      margin-top: 28px;
+      margin-left: 10px;
+      text-align: left;
+      font-size: 18px;
+      line-height: 1.4; /* 行間を調整 */
+    }
+    .membericon {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      width: 90px;
+      height: 90px;
+      transform: translate(-10%, -10%);
+    }
+    .xicon {
+      position: absolute;
+      top: 8px;
+      right:50px;
+      width: 34px;
+      height: 34px;
+    }
+    .githubicon {
+      position: absolute;
+      top: 8px;
+      right:8px;
+      width: 34px;
+      height: 34px;
+    }
+  </style>
+
+<div class="card">
+  <a class="xicon" href="#"><img src="https://github.com/kettle12110/astro-test/blob/master/src/assets/X.png?raw=true" alt="Close"></a>
+  <a class="githubicon" href={githubUrl}><img src="https://github.com/kettle12110/astro-test/blob/master/src/assets/Github.png?raw=true" alt="GitHub"></a>
+  <img src={imgUrl} alt="Icon" class="membericon">
+  <div class="info">
+    <div class="name">{name}</div>
+    <div class="job">{title}</div>
+  </div>
+  <div class="description" set:html={description}>
+  </div>
+</div>
