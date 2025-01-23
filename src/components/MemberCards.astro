@@ -1,4 +1,7 @@
 ---
+import GithubIconUrl from '../assets/Github.svg?url';
+import XIconUrl from '../assets/X.svg?url';
+
 export interface Props {
   githubUrl: string;
   imgUrl: string;
@@ -89,8 +92,8 @@ const { githubUrl, imgUrl, name, title, description } = Astro.props as Props;
   </style>
 
 <div class="card">
-  <a class="xicon" href="#"><img src="https://github.com/kettle12110/astro-test/blob/master/src/assets/X.png?raw=true" alt="Close"></a>
-  <a class="githubicon" href={githubUrl}><img src="https://github.com/kettle12110/astro-test/blob/master/src/assets/Github.png?raw=true" alt="GitHub"></a>
+  <a class="xicon" href="#"><img src={XIconUrl} alt="Close"></a>
+  <a class="githubicon" href={githubUrl}><img src={GithubIconUrl} alt="GitHub"></a>
   <img src={imgUrl} alt="Icon" class="membericon">
   <div class="info">
     <div class="name">{name}</div>
