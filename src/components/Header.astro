@@ -1,0 +1,98 @@
+---
+---
+<header>
+  <style>
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 2rem;
+      background-color: var(--header-bg);
+      border-bottom: 1px solid var(--border-color);
+      font-size: var(--header-font-size);
+      width: 100%;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: var(--logo-font-size);
+      margin-left: 35px;
+    }
+
+    .logo img {
+      height: 90px;
+      margin-right: 1rem;
+    }
+
+    .menu {
+      font-size: var(--menu-font-size);
+      display: flex;
+      align-items: center;
+      min-width: 250px;
+      justify-content: flex-end;
+      padding-right: 35px;
+    }
+
+    .dark-mode-toggle {
+      position: relative;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 2.5rem;
+      margin-left: 1rem;
+      color: inherit;
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      text-align: center;
+      line-height: 40px;
+    }
+
+    #mode-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+
+  <div class="logo">
+    <img src="/src/assets/NekoLogo.svg" alt="Logo">
+    <span>IT学習サーバー</span>
+  </div>
+  <div class="menu">
+    メンバー一覧
+    <button class="dark-mode-toggle" aria-label="ダークモード切り替え">
+      <span id="mode-icon">☀</span>
+    </button>
+  </div>
+
+  <script>
+    const darkModeToggle = document.querySelector('.dark-mode-toggle');
+    const modeIcon = document.getElementById('mode-icon');
+    const body = document.body;
+
+    // ローカルストレージからダークモードの設定を読み込む
+    if (localStorage.getItem('darkMode') === 'enabled') {
+      body.classList.add('dark-mode');
+      modeIcon.textContent = '☽';
+      modeIcon.style.color = 'white';
+    }
+
+    // ダークモードの切り替え
+    darkModeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      
+      if (body.classList.contains('dark-mode')) {
+        localStorage.setItem('darkMode', 'enabled');
+        modeIcon.textContent = '☽';
+        modeIcon.style.color = 'white';
+      } else {
+        localStorage.removeItem('darkMode');
+        modeIcon.textContent = '☀';
+        modeIcon.style.color = 'inherit';
+      }
+    });
+  </script>
+</header>
