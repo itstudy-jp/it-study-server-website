@@ -1,5 +1,100 @@
 ---
-import Header from '/src/components/HeadFoot.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import Card from '../../../components/MemberCards.astro';
+import aki from '../../../assets/member-aki.png';
+import tasuku from '../../../assets/member-tasuku.png';
+import fu from '../../../assets/member-fu.png';
+import kettle from '../../../assets/member-kettle.png';
 ---
 
-<Header />
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>メンバー</title>
+    <style is:global>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+      :root {
+        --bg-color: #f9f9f9;
+        --text-color: #000;
+        --header-bg: #fff;
+        --border-color: #ddd;
+        
+        --base-font-size: 16px;
+        --header-font-size: 1.7rem;
+        --logo-font-size: 2rem;
+        --menu-font-size: 1.7rem;
+      }
+
+      .dark-mode {
+        --bg-color: #121212;
+        --text-color: #fff;
+        --header-bg: #1e1e1e;
+        --border-color: #333;
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        line-height: 1.5;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        margin: 0;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        transition: background-color 0.3s, color 0.3s;
+      }
+    </style>
+    <style>
+      main {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 0;
+      }
+
+      .pageheader {
+        text-align: center;
+        align-items: center;
+        margin-bottom: 100px;
+      }
+
+      .about-main {
+        font-size: 56px;
+        margin: 0 auto;
+        margin-bottom: 0;
+      }
+
+      .about-sub {
+        font-size: 26px;
+        margin: 0 auto;
+      }
+
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(2, 490px);
+        gap: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <div class="pageheader">
+        <p class="about-main">私たちについて</p>
+        <p class="about-sub">Discordサーバーで主に活動している人たち</p>
+      </div>
+      <div class="grid-container">
+        <Card githubUrl="https://github.com/username1" imgUrl={aki.src} name="Aki" title="鯖主、陽キャ" description="明るいお姉さん<br>タイにある古のインターネットに住んでいた<br>インフラ（物理）と英語に強い" />
+        <Card githubUrl="https://github.com/username1" imgUrl={tasuku.src} name="髙木 祐来" title="イイやつ" description="プログラミングとボカロが好きな、合理的な陰キャ<br>日ごろから技術を触っていて、知識がすごい大学生<br>MBTI: ENTJ-A（指揮官）" />
+        <Card githubUrl="https://github.com/username1" imgUrl={fu.src} name="fu" title="音楽人" description="吹奏楽とITの二刀流してる大学生<br>このWebサイトのメインページ作ってる人<br>なんでもとりあえずやってみるタイプ" />
+        <Card githubUrl="https://github.com/username1" imgUrl={kettle.src} name="けとる" title="ストゼロ" description="いつも酔ってる酒カス<br>文系からSEに就職した<br>文系コンプレックスを解消するべく勉強中" />
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>
