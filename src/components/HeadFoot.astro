@@ -1,5 +1,10 @@
 ---
 layout: "@astrojs/layouts/Main.astro"
+import Card from '../components/MemberCards.astro';
+import aki from '../assets/member-aki.png';
+import tasuku from '../assets/member-tasuku.png';
+import fu from '../assets/member-fu.png';
+import kettle from '../assets/member-kettle.png';
 ---
 
 <html>
@@ -8,6 +13,8 @@ layout: "@astrojs/layouts/Main.astro"
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IT学習サーバー</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
     :root {
       --bg-color: #f9f9f9;
       --text-color: #000;
@@ -36,6 +43,13 @@ layout: "@astrojs/layouts/Main.astro"
       color: var(--text-color);
       transition: background-color 0.3s, color 0.3s;
       font-size: var(--base-font-size);
+      line-height: 1.5;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: auto;
+      text-align: center;
     }
 
     header {
@@ -46,41 +60,44 @@ layout: "@astrojs/layouts/Main.astro"
       background-color: var(--header-bg);
       border-bottom: 1px solid var(--border-color);
       font-size: var(--header-font-size);
+      width: 100%;
     }
 
     .logo {
-      display: flex;
-      align-items: center;
-      font-size: var(--logo-font-size);
-    }
+    display: flex;
+    align-items: center;
+    font-size: var(--logo-font-size);
+    margin-left: 35px; /* 右に移動するための左マージンを追加 */
+  }
 
-    .logo img {
-      height: 90px;
-      margin-right: 1rem;
-    }
+  .logo img {
+    height: 90px;
+    margin-right: 1rem;
+  }
 
     .menu {
-      font-size: var(--menu-font-size);
-      display: flex;
-      align-items: center;
-      min-width: 250px;
-      justify-content: flex-end;
-    }
+    font-size: var(--menu-font-size);
+    display: flex;
+    align-items: center;
+    min-width: 250px;
+    justify-content: flex-end;
+    padding-right: 35px; /* Add padding to the right */
+  }
 
-    .dark-mode-toggle {
-      position: relative;
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-size: 2.5rem;
-      margin-left: 1.5rem;
-      color: inherit;
-      display: inline-block;
-      width: 40px;
-      height: 40px;
-      text-align: center;
-      line-height: 40px;
-    }
+  .dark-mode-toggle {
+    position: relative;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 2.5rem;
+    margin-left: 1rem; /* Reduce the left margin */
+    color: inherit;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+  }
 
     #mode-icon {
       position: absolute;
@@ -99,13 +116,39 @@ layout: "@astrojs/layouts/Main.astro"
       background-color: var(--header-bg);
       border-top: 1px solid var(--border-color);
       text-align: center;
+      width: 100%;
+    }
+
+    .pageheader {
+      text-align: center;
+      align-items: center;
+      margin-bottom: 100px;
+      margin-top: 5%;
+    }
+
+    .about-main {
+      font-size: 56px;
+      margin: 0 auto;
+      margin-bottom: 0;
+    }
+
+    .about-sub {
+      font-size: 26px;
+      margin: 0 auto;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(2, 490px);
+      gap: 50px;
     }
   </style>
 </head>
+
 <body>
   <header>
     <div class="logo">
-      <img src="/src/assets/logo_250125.png" alt="Logo">
+      <img src="/src/assets/logo_250126.png" alt="Logo">
       <span>IT学習サーバー</span>
     </div>
     <div class="menu">
@@ -115,6 +158,20 @@ layout: "@astrojs/layouts/Main.astro"
       </button>
     </div>
   </header>
+  
+  <main>
+    <div class="pageheader">
+      <p class="about-main">私たちについて</p>
+      <p class="about-sub">Discordサーバーで主に活動している人たち</p>
+    </div>
+    <div class="grid-container">
+      <Card githubUrl="https://github.com/username1" imgUrl={aki.src} name="Aki" title="鯖主、陽キャ" description="明るいお姉さん<br>タイにある古のインターネットに住んでいた<br>インフラ（物理）と英語に強い" />
+      <Card githubUrl="https://github.com/username1" imgUrl={tasuku.src} name="髙木 祐来" title="イイやつ" description="プログラミングとボカロが好きな、合理的な陰キャ<br>日ごろから技術を触っていて、知識がすごい大学生<br>MBTI: ENTJ-A（指揮官）" />
+      <Card githubUrl="https://github.com/username1" imgUrl={fu.src}name="fu" title="音楽人" description="吹奏楽とITの二刀流してる大学生<br>このWebサイトのメインページ作ってる人<br>なんでもとりあえずやってみるタイプ" />
+      <Card githubUrl="https://github.com/username1" imgUrl={kettle.src} name="けとる" title="ストゼロ" description="いつも酔ってる酒カス<br>文系からSEに就職した<br>文系コンプレックスを解消するべく勉強中" />
+    </div>
+  </main>
+  
   <footer>
     Copyright © IT学習 All Rights Reserved.
   </footer>
