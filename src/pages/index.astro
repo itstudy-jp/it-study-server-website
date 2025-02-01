@@ -1,0 +1,84 @@
+---
+import sample_cat from "../assets/logo_250125.png";
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IT学習</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+
+      body {
+        font-family: "Inter", sans-serif;
+        line-height: 1.5;
+        display: flex;
+        margin: 0;
+        margin-top: 5%;
+        background-color: white;
+        overflow: hidden;
+      }
+
+      .section-main {
+        margin-left: 8%;
+      }
+
+      h1 {
+        font-size: 80px;
+        font-weight: 500;
+        color: #333;
+        margin: 0;
+      }
+
+      p {
+        font-size: 24px;
+        margin: 1% 0;
+      }
+
+      .section-button {
+        margin-top: 20px;
+      }
+
+      button {
+        width: 150px;
+        font-size: 16px;
+        padding: 10px 20px;
+        margin: 0 10px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+
+        &:hover {
+          box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+          transform: scale(1.04);
+          transition-duration: 0.5s;
+        }
+        &:active {
+          transform: scale(0.98);
+          transition-duration: 0.2s;
+        }
+      }
+
+      .img-main {
+        position: absolute;
+        top: 150px;
+        left: 700px;
+        width: 55%;
+        z-index: -1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="section-main">
+      <h1>IT学習サーバー</h1>
+      <p>このサーバーは...</p>
+      <div class="section-button">
+        <button>説明を見る</button>
+        <button>参加する</button>
+      </div>
+    </div>
+    <img src={sample_cat.src} class="img-main" />
+  </body>
+</html>
