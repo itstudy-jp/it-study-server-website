@@ -7,10 +7,9 @@ export interface Props {
   imgUrl: string;
   name: string;
   title: string;
-  description: string;
 }
 
-const { githubUrl, imgUrl, name, title, description } = Astro.props as Props;
+const { githubUrl, imgUrl, name, title, } = Astro.props as Props;
 ---
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
@@ -98,6 +97,7 @@ const { githubUrl, imgUrl, name, title, description } = Astro.props as Props;
     <div class="name">{name}</div>
     <div class="job">{title}</div>
   </div>
-  <div class="description" set:html={description}>
+  <div class="description" >
+    <slot />
   </div>
 </div>
