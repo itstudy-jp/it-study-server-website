@@ -1,9 +1,12 @@
 ---
 import Card from '../components/MemberCards.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 import aki from '../assets/member-aki.png';
 import tasuku from '../assets/member-tasuku.png';
 import fu from '../assets/member-fu.png';
 import kettle from '../assets/member-kettle.png';
+import '../styles/global.css';
 ---
 <!DOCTYPE html>
 <html lang="ja">
@@ -22,8 +25,6 @@ import kettle from '../assets/member-kettle.png';
         justify-content: center;
         align-items: center;
         height: auto;
-        margin-top: 5%; /* ここを追加 */
-        background-color: white;
         text-align: center; /* テキストを中央揃え */
       }
       .pageheader {
@@ -48,6 +49,7 @@ import kettle from '../assets/member-kettle.png';
       }
     </style>
   </head>
+  <Header />
   <body>
     <div class="pageheader">
       <p class="about-main">私たちについて</p>
@@ -60,4 +62,5 @@ import kettle from '../assets/member-kettle.png';
       <Card githubUrl="https://github.com/username1" imgUrl={kettle.src} name="けとる" title="ストゼロ" description="いつも酔ってる酒カス<br>文系からSEに就職した<br>文系コンプレックスを解消するべく勉強中" />
     </div>
   </body>
+  <Footer />
 </html>
