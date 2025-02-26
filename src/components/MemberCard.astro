@@ -30,10 +30,9 @@ const { githubUrl, imgUrl, name, title, } = Astro.props as Props;
       position: relative;
       display: flex;
       flex-direction: column;
-      border: 1px solid #ccc;
       padding: 16px;
       border-radius: 8px;
-      background: #EEEEEE;
+      background: var(--card-color);
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       height: 180px;
@@ -56,7 +55,6 @@ const { githubUrl, imgUrl, name, title, } = Astro.props as Props;
     .job {
       text-align: left; /* 左揃えに変更 */
       font-size: 15px;
-      color: #4A4A4A; /* 文字の色を追加 */
     }
     .description {
       margin-top: 28px;
