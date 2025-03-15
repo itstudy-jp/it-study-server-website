@@ -12,7 +12,7 @@ import Layout from "../layouts/layout.astro";
 
   p {
     font-size: 36px;
-    margin: 0 3%;
+    margin: 0 1%;
   }
 
   .section-main {
@@ -26,7 +26,7 @@ import Layout from "../layouts/layout.astro";
     margin-top: 20px;
   }
 
-  button {
+  .section-button button{
     width: 150px;
     font-size: 20px;
     padding: 10px 20px;
@@ -49,19 +49,24 @@ import Layout from "../layouts/layout.astro";
   }
 
   .img-main {
-    margin-top : -10%;
+    margin-top : -20%;
     display: flex;
     justify-content: flex-end;
   }
   .img-main img {
     width: 60vw; 
+    z-index: -1;
   }
 </style>
 
 <Layout>
   <div class="section-main">
     <h1>IT学習サーバー</h1>
-    <p>このサーバーは...</p>
+    <p>
+      IT系の資格を勉強する仲間を作るためのDiscordコミュニティです<br>
+      資格はIT関係なら何でもありで、CCNA、基本情報・応用情報、また言語についてのチャンネルなどがあります!<br>
+      雑談やボードゲームなども交えつつ仲良く勉強していきたい方にお勧めしています<br>
+    </p>
     <div class="section-button">
       <button>説明を見る</button>
       <button>参加する</button>
