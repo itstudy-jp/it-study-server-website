@@ -16,41 +16,21 @@ import '../styles/global.css';
         font-family: 'Inter', sans-serif;
         line-height: 1.5;
         display: flex;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        transition: background-color 0.3s, color 0.3s;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: auto;
         text-align: center; /* テキストを中央揃え */
-      }
-      .pageheader {
-        text-align: center;
-        align-items: center;
-        margin-bottom: 100px; /* 変更 */
-      }
-      .about-main {
-        font-size: 56px;
-        margin: 0 auto; /* 左右の余白を均等に */
-        margin-bottom: 0;
-      }
-      .about-sub {
-        font-size: 26px;
-        margin: 0 auto; /* 左右の余白を均等に */
-      }
-      .grid-container {
-        display: grid;
-        grid-template-columns: repeat(2, 490px); /* カードの幅に合わせて列を自動調整 */
-        gap: 50px; /* カード間のスペースを設定 */
-
       }
     </style>
   </head>
 
   <body>
-  <Header /> 
-  <main>
-  <slot />
-  </main>
-  <Footer />
+    <Header /> 
+    <main>
+      <slot />
+    </main>
+    <Footer />
   </body>
 
 </html>
