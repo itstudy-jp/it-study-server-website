@@ -4,12 +4,13 @@ import XIcon from '../assets/X.svg';
 
 export interface Props {
   githubUrl: string;
+  xUrl: string;
   imgUrl: string;
   name: string;
   title: string;
 }
 
-const { githubUrl, imgUrl, name, title, } = Astro.props as Props;
+const { githubUrl, xUrl ,imgUrl, name, title, } = Astro.props as Props;
 ---
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
@@ -76,7 +77,7 @@ const { githubUrl, imgUrl, name, title, } = Astro.props as Props;
   </style>
 
 <div class="card">
-  <a class="xicon" href="#"><img src={XIcon.src} alt="Close"></a>
+  <!--<a class="xicon" href={xUrl}><img src={XIcon.src} alt="Close"></a> -->
   <a class="githubicon" href={githubUrl}><img src={GithubIcon.src} alt="GitHub"></a>
   <img src={imgUrl} alt="Icon" class="membericon">
   <div class="info">
