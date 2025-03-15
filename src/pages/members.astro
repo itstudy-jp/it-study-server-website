@@ -30,8 +30,8 @@ import Layout from '../layouts/layout.astro';
     width: fit-content;
     margin-inline: auto;
     display: grid;
-    grid-template-columns: repeat(2, 490px); /* カードの幅に合わせて列を自動調整 */
-    gap: 50px; /* カード間のスペースを設定 */
+    grid-template-columns: repeat(2, 490px);
+    gap: 50px;
   }
 </style>
 
@@ -42,17 +42,18 @@ import Layout from '../layouts/layout.astro';
   </div>
 
   <div class="grid-container">
-    <Card githubUrl="https://github.com/username1" imgUrl={aki.src} name="Aki" title="鯖主、陽キャ">
+    <Card githubUrl="https://github.com/AkiOkuhira" xUrl = {} imgUrl={aki.src} name="Aki" title="鯖主、陽キャ">
       明るいお姉さん<br>タイにある古のインターネットに住んでいた<br>インフラ（物理）と英語に強い
     </Card>
-    <Card githubUrl="https://github.com/username1" imgUrl={tasuku.src} name="髙木 祐来" title="イイやつ"> 
+    <Card githubUrl="https://github.com/tasuren" xUrl = {} imgUrl={tasuku.src} name="髙木 祐来" title="イイやつ"> 
       プログラミングとボカロが好きな、合理的な陰キャ<br>日ごろから技術を触っていて、知識がすごい大学生<br>MBTI: ENTJ-A（指揮官
     </Card>
-    <Card githubUrl="https://github.com/username1" imgUrl={fu.src}name="fu" title="音楽人">
+    <Card githubUrl="https://github.com/nrak126" xUrl = {} imgUrl={fu.src}name="fu" title="音楽人">
       吹奏楽とITの二刀流してる大学生<br>このWebサイトのメインページ作ってる人<br>なんでもとりあえずやってみるタイプ
     </Card>
-    <Card githubUrl="https://github.com/username1" imgUrl={kettle.src} name="けとる" title="ストゼロ" >
+    <Card githubUrl="https://github.com/kettle12110" xUrl = {} imgUrl={kettle.src} name="けとる" title="ストゼロ" >
       いつも酔ってる酒カス<br>文系からSEに就職した<br>文系コンプレックスを解消するべく勉強中
     </Card>
+    
   </div>
 </Layout>

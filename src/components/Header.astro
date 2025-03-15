@@ -33,6 +33,12 @@ import Logo from '../assets/NekoLogo.svg';
       min-width: 250px;
       justify-content: flex-end;
       padding-right: 35px;
+      list-style: none;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
     .dark-mode-toggle {
@@ -56,14 +62,17 @@ import Logo from '../assets/NekoLogo.svg';
       left: 50%;
       transform: translate(-50%, -50%);
     }
+
   </style>
 
-  <div class="logo">
+  <a href ="/it-study-server-website/" class="logo">
     <img src={Logo.src} alt="Logo">
     <span>IT学習サーバー</span>
-  </div>
+  </a>
   <div class="menu">
-    メンバー一覧
+    <li>
+      <a href="members">メンバー一覧</a>
+    </li>
     <button class="dark-mode-toggle" aria-label="ダークモード切り替え">
       <span id="mode-icon">☀</span>
     </button>
