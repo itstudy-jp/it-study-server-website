@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+.contents {
+    margin: 30px 50px;
+}
+
+h1{
+    border-left: 7px solid #50aed3;
+    padding-left: 10px;
+    color: #0f5a6e;
+}
+
+h2{
+    color: #0f5a6e;
+}
+
+p {
+    color: #0a3f4d;
+}
+
+a,a:hover {
+    color:#000;
+}
+
+hr {
+    border-color: #7dc9df;
+}
