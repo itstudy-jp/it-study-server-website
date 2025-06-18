@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://itstudy-jp.github.io/it-study-server-website/sitemap-index.xml
