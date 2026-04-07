@@ -1,59 +1,116 @@
 ---
-import Card from '../components/MemberCard.astro';
-import aki from '../assets/member-aki.png';
-import tasuku from '../assets/member-tasuku.png';
-import fu from '../assets/member-fu.png';
-import kettle from '../assets/member-kettle.png';
-import '../styles/global.css';
-import Layout from '../layouts/layout.astro';
+import Card from "../components/MemberCard.astro";
+import tasuku from "../assets/member-tasuku.png";
+import fu from "../assets/member-fu.png";
+import kettle from "../assets/member-kettle.png";
+import kushii from "../assets/member-kushii.png";
+import "../styles/global.css";
+import Layout from "../layouts/layout.astro";
 ---
 
 <style>
-  .pageheader {
+  .page-header {
     text-align: center;
     align-items: center;
-    margin-bottom: 100px; /* 変更 */
+    margin-bottom: 2.5rem; /* 変更 */
   }
 
-  .about-main {
-    font-size: 56px;
+  .about-us {
+    font-size: 3.5rem;
     margin: 0 auto; /* 左右の余白を均等に */
     margin-bottom: 0;
   }
 
   .about-sub {
-    font-size: 26px;
+    font-size: 1.625rem;
     margin: 0 auto; /* 左右の余白を均等に */
   }
 
   .grid-container {
-    width: fit-content;
-    margin-inline: auto;
     display: grid;
-    grid-template-columns: repeat(2, 490px);
-    gap: 50px;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+    grid-template-columns: repeat(3, 30rem);
+    grid-template-rows: repeat(auto, 12rem);
+    gap: 2rem;
+    margin-bottom: 1rem;
+  }
+  @media screen and (max-width: 1000px) {
+    .grid-container {
+      grid-template-columns: repeat(1, 20rem);
+      grid-template-rows: repeat(auto, 12rem);
+    }
+    .about-us {
+      font-size: 3rem;
+      margin: 0 auto; /* 左右の余白を均等に */
+      margin-bottom: 0;
+    }
   }
 </style>
 
 <Layout>
-  <div class="pageheader">
-    <p class="about-main">私たちについて</p>
+  <div class="page-header">
+    <p class="about-us">私たちについて</p>
     <p class="about-sub">Discordサーバーで主に活動している人たち</p>
   </div>
-
   <div class="grid-container">
-    <Card githubUrl="https://github.com/AkiOkuhira" xUrl = {} imgUrl={aki.src} name="Aki" title="鯖主、陽キャ">
-      明るいお姉さん<br>タイにある古のインターネットに住んでいた<br>インフラ（物理）と英語に強い
+    <Card
+      githubUrl="https://github.com/AkiOkuhira"
+      xUrl=""
+      imgUrl={aki.src}
+      name="Aki"
+      title="鯖主、陽キャ"
+      personalPageLink=""
+    >
+      明るいお姉さん<br />タイにある古のインターネットに住んでいた<br
+      />インフラ（物理）と英語に強い
     </Card>
-    <Card githubUrl="https://github.com/tasuren" xUrl = {} imgUrl={tasuku.src} name="髙木 祐来" title="イイやつ"> 
-      プログラミングとボカロが好きな、合理的な陰キャ<br>日ごろから技術を触っていて、知識がすごい大学生<br>MBTI: ENTJ-A（指揮官
+    <Card
+      githubUrl="https://github.com/tasuren"
+      xUrl=""
+      imgUrl={tasuku.src}
+      name="髙木 祐来"
+      title="イイやつ"
+      personalPageLink=""
+    >
+      プログラミングとボカロが好きな、合理的な陰キャ<br
+      />日ごろから技術を触っていて、知識がすごい大学生<br />MBTI: ENTJ-A（指揮官
     </Card>
-    <Card githubUrl="https://github.com/nrak126" xUrl = {} imgUrl={fu.src}name="fu" title="音楽人">
-      吹奏楽とITの二刀流してる大学生<br>このWebサイトのメインページ作ってる人<br>なんでもとりあえずやってみるタイプ
+    <Card
+      githubUrl="https://github.com/nrak126"
+      xUrl=""
+      imgUrl={fu.src}
+      name="fu"
+      title="音楽人"
+      personalPageLink=""
+    >
+      吹奏楽とITの二刀流してる大学生<br
+      />このWebサイトのメインページ作ってる人<br
+      />なんでもとりあえずやってみるタイプ
     </Card>
-    <Card githubUrl="https://github.com/kettle12110" xUrl = {} imgUrl={kettle.src} name="けとる" title="ストゼロ" >
-      いつも酔ってる酒カス<br>文系からSEに就職した<br>文系コンプレックスを解消するべく勉強中
+    <Card
+      githubUrl="https://github.com/kettle12110"
+      xUrl=""
+      imgUrl={kettle.src}
+      name="けとる"
+      title="ストゼロ"
+      personalPageLink=""
+    >
+      いつも酔ってる酒カス<br />文系からSEに就職した<br
+      />文系コンプレックスを解消するべく勉強中
     </Card>
-    
+    <Card
+      githubUrl="https://github.com/kushiik563"
+      xUrl=""
+      imgUrl={kushii.src}
+      name="くしー"
+      title="器用貧乏"
+      personalPageLink="/it-study-server-website/members/kushii"
+    >
+      薄く広くいろんなことをやっているエンジニア<br />
+      アイコンはStable-Diffusionで昔作ったもの<br />
+      エラーとエラーを解決することが大好き
+    </Card>
   </div>
 </Layout>

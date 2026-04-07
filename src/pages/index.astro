@@ -1,44 +1,52 @@
 ---
-import sample_cat from "../assets/IndexCat.png";
+import sample_cat from "../assets/IndexCat.svg";
 import Layout from "../layouts/layout.astro";
 ---
 
 <style>
-  h1 {
-    font-size: 64px;
-    margin: 0;
-    font-weight: normal;
-  }
-
   p {
-    font-size: 24px;
+    font-size: 1em;
     margin: 0 1%;
   }
-
-  .section-main {
-    margin-top : 3%;
-    margin-right : 50%;
-    margin-left : 5%;
+  .pc-section-main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 2rem;
+    font-size: 2rem;
+  }
+  .pc-section-main-left {
+    display: flex;
+    flex-direction: column;
+    padding-right: 2rem;
     text-align: left;
+    justify-content: center;
+    align-items: center;
+    width: 52vw;
   }
-
-  .section-button {
-    margin-top: 20px;
+  .pc-section-main-left h1 {
+    font-weight: normal;
+    font-size: 3.5rem;
+    text-align: left;
+    width: 100%;
   }
-
-  .section-button button{
-    width: 150px;
-    font-size: 20px;
-    padding: 10px 20px;
-    margin: 0 10px;
+  .phone-section-main {
+    display: none;
+  }
+  .pc-join-button button,
+  .phone-join-button button {
+    width: 10rem;
+    font-size: 1.3rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
     border: none;
-    border-radius: 10px;
+    border-radius: 1rem;
     cursor: pointer;
     color: var(--text-color);
     background: var(--card-color);
 
     &:hover {
-      box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+      box-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 61, 60, 0.2);
       transform: scale(1.04);
       transition-duration: 0.5s;
     }
@@ -47,35 +55,111 @@ import Layout from "../layouts/layout.astro";
       transition-duration: 0.2s;
     }
   }
-
-  .img-main {
-    margin-top : -15%;
-    margin-left: 55%;
+  .pc-join-button button {
+    margin-top: 2rem;
+  }
+  .phone-join-button button {
+    margin-top: 2rem;
+  }
+  .pc-img-main {
     display: flex;
     justify-content: flex-start;
+    width: 35vw;
+    height: 35vw;
   }
-  .img-main img {
-    width: 30vw; 
-    z-index: -1;
+  .phone-img-main {
+    display: none;
+  }
+  .dark-mode-toggle {
+    display: none;
+  }
+
+  /* 大きい画面の時のみ表示(小さい画面のときは非表示）*/
+  @media screen and (max-width: 1000px) {
+    .pc-section-main {
+      display: none;
+    }
+    .phone-section-main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 1rem;
+      margin-right: 2.5rem;
+      margin-left: 2.5rem;
+      margin-bottom: 1rem;
+      text-align: left;
+    }
+    .phone-img-main {
+      display: flex;
+      justify-content: flex-start;
+      height: 15rem;
+      margin-top: 2rem;
+    }
+
+    .dark-mode-toggle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 2.5rem;
+      color: inherit;
+      text-align: center;
+      margin-top: 0.5rem;
+      width: 2rem;
+    }
   }
 </style>
 
 <Layout>
-  <div class="section-main">
-    <h1>IT学習サーバー</h1>
+  <!-- PC用画面 -->
+  <div class="pc-section-main">
+    <div class="pc-section-main-left">
+      <h1>このサーバについて</h1>
+      <p>
+        IT系の資格を勉強する仲間を作るためのDiscordコミュニティです<br />
+        資格はIT関係なら何でもありで、CCNA、基本情報・応用情報、また言語についてのチャンネルなどがあります!<br
+        />
+        雑談やボードゲームなども交えつつ仲良く勉強していきたい方にお勧めしています<br
+        />
+      </p>
+      <div class="pc-join-button">
+        <a href="https://discord.gg/7Z6PbYq68q" target="_blank">
+          <button>参加する</button>
+        </a>
+      </div>
+    </div>
+    <div class="pc-img-main">
+      <img src={sample_cat.src} />
+    </div>
+  </div>
+  <!-- スマホ用画面 -->
+  <div class="phone-section-main">
     <p>
-      IT系の資格を勉強する仲間を作るためのDiscordコミュニティです<br>
-      資格はIT関係なら何でもありで、CCNA、基本情報・応用情報、また言語についてのチャンネルなどがあります!<br>
-      雑談やボードゲームなども交えつつ仲良く勉強していきたい方にお勧めしています<br>
+      IT系の資格を勉強する仲間を作るためのDiscordコミュニティです<br />
+      資格はIT関係なら何でもありで、CCNA、基本情報・応用情報、また言語についてのチャンネルなどがあります!<br
+      />
+      雑談やボードゲームなども交えつつ仲良く勉強していきたい方にお勧めしています<br
+      />
     </p>
-    <div class="section-button">
+    <div class="phone-img-main">
+      <img src={sample_cat.src} />
+    </div>
+    <div class="phone-join-button">
       <a href="https://discord.gg/7Z6PbYq68q" target="_blank">
         <button>参加する</button>
       </a>
     </div>
-  </div>
-
-  <div class ="img-main">
-      <img src={sample_cat.src}>
+    <div class="phone-join-button">
+      <a href="/it-study-server-website/members">
+        <button>コアメン達</button>
+      </a>
+    </div>
+    <button class="dark-mode-toggle" aria-label="ダークモード切り替え">
+      <div id="mode-icon">
+        <script src="../scripts/change-light-dark.js"></script>☀
+      </div>
+    </button>
   </div>
 </Layout>

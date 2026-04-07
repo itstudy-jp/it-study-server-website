@@ -1,18 +1,41 @@
 :root {
   --bg-color: #ffffff;
-  --text-color: #000;
-  --border-color: #ddd;
-  --card-color:#EEEEEE;
+  --text-color: #000000;
+  --border-color: #dddddd;
+  --card-color: #eeeeee;
 
   --base-font-size: 16px;
   --header-font-size: 1.7rem;
   --logo-font-size: 2rem;
   --menu-font-size: 1.7rem;
+
+  color-scheme: light dark;
+}
+
+*,
+*::before,
+*::after {
+  transition:
+    background-color 0.24s ease,
+    color 0.24s ease,
+    border-color 0.24s ease,
+    box-shadow 0.24s ease;
+}
+
+html,
+header,
+main,
+body,
+footer {
+  display: block;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 .dark-mode {
-  --bg-color: #4E4E4E;
-  --text-color: #fff;
-  --border-color: #333;
-  --card-color:#858585;
+  --bg-color: #4e4e4e;
+  --text-color: #ffffff;
+  --border-color: #333333;
+  --card-color: #858585;
+  color-scheme: dark;
 }
